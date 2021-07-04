@@ -2,35 +2,42 @@
     <div class="col-sm-12">
         <div class="card border-primary mb-6">
             <div class="card-header">
-                Edit Data Buku
-                <a href="<?= site_url('buku'); ?>" class="btn btn-warning float-end">Kembali</a>
+                Edit Data Anggota
+                <a href="<?= site_url('anggota'); ?>" class="btn btn-warning float-end">Kembali</a>
             </div>
             <div class="card-body text-primary">
-                <form method="post" action="<?=site_url('buku/update');?>">
-                    <input type="hidden" name="id_buku" value="<?=$show->id_buku;?>">
+                <form method="post" action="<?=site_url('anggota/update');?>">
+                    <input type="hidden" name="id_anggota" value="<?= $show->id_anggota ?>">
                     <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="form-label">Judul Buku</label>
-                        <input type="text" name="judul_buku" value="<?=$show->judul_buku;?>" class="form-control" id="exampleFormControlInput1" placeholder="isi dengan judul buku">
+                        <label for="exampleFormControlInput1" class="form-label">Nama</label>
+                        <input type="text" name="nama_anggota" class="form-control" id="exampleFormControlInput1"
+                               placeholder="isi dengan Nama Anggota" value="<?= $show->nama_anggota ?>">
                     </div>
 
                     <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="form-label">Pengarang</label>
-                        <input type="text" name="pengarang" value="<?=$show->pengarang;?>" class="form-control" id="exampleFormControlInput1" placeholder="isi dengan nama pengarang buku">
+                        <label for="exampleFormControlInput1" class="form-label">Gender</label>
+                        <select name="gender" class="form-control">
+                            <option value="" disabled>Pilih</option>
+                            <option value="Laki-Laki" <?php if ($show->gender == "Laki-Laki") { echo 'selected'; } ?>>Laki-Laki</option>
+                            <option value="Perempuan" <?php if ($show->gender == "Perempuan")  { echo 'selected'; } ?>>Perempuan</option>
+                        </select>
                     </div>
 
                     <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="form-label">Penerbit</label>
-                        <input type="text" name="penerbit" value="<?=$show->penerbit;?>" class="form-control" id="exampleFormControlInput1" placeholder="isi dengan penerbit buku">
+                        <label for="exampleFormControlInput1" class="form-label">No Telp</label>
+                        <input type="number" name="no_telp" class="form-control" id="exampleFormControlInput1"
+                               placeholder="62.." value="<?= $show->no_telp ?>">
                     </div>
 
                     <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="form-label">E-ISBN</label>
-                        <input type="number" name="isbn" value="<?=$show->isbn;?>" class="form-control" id="exampleFormControlInput1" placeholder="isi dengan judul buku">
+                        <label for="exampleFormControlInput1" class="form-label">Alamat</label>
+                        <textarea name="alamat" class="form-control" placeholder="isi dengan alamat"><?= $show->alamat ?></textarea>
                     </div>
 
                     <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="form-label">Tahun Terbit</label>
-                        <input type="number" min="2000" max="2021" name="thn_terbit" value="<?=$show->thn_terbit;?>" class="form-control" id="exampleFormControlInput1" placeholder="2021">
+                        <label for="exampleFormControlInput1" class="form-label">Email</label>
+                        <input type="email" name="email" class="form-control" id="exampleFormControlInput1"
+                               placeholder="isi@email.com" value="<?= $show->email ?>">
                     </div>
 
                     <div class="mb-3">

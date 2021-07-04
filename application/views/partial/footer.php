@@ -9,7 +9,7 @@
 
 <script>
     $(document).ready(function() {
-        $('#tableBuku').DataTable();
+        $('#datatable').DataTable();
     } );
 </script>
 </body>

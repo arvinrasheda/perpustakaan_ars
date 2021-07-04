@@ -4,12 +4,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 /**
 * 
 */
-class Buku_Model extends CI_Model
+class Anggota_Model extends CI_Model
 {
 	public function create($data)
 	{
 		// input data baru
-		if($this->db->insert('buku', $data)){
+		if($this->db->insert('anggota', $data)){
 			return true;
 		}else{
 			return false;
@@ -18,17 +18,16 @@ class Buku_Model extends CI_Model
 
 	public function read()
 	{	
-		// baca data
-		$this->db->where('deleted_at is null', null);
-		return $this->db->get('buku');
+		// baca data;
+		return $this->db->get('anggota');
 	}
 
 	public function update($id, $data)
 	{
 		// ubah data
 
-		$this->db->where('id_buku', $id);
-		if($this->db->update('buku', $data)){
+		$this->db->where('id_anggota', $id);
+		if($this->db->update('anggota', $data)){
 			return true;
 		}else{
 			return false;
@@ -39,8 +38,8 @@ class Buku_Model extends CI_Model
 	{
 		// hapus data
 		// hard delete atau soft delete
-		$this->db->where('id_buku', $id);
-		if($this->db->delete('buku')){
+		$this->db->where('id_anggota', $id);
+		if($this->db->delete('anggota')){
 			return true;
 		}else{
 			return false;
@@ -52,8 +51,8 @@ class Buku_Model extends CI_Model
 		$data = array(
 			'deleted_at' => date('Y-m-d H:i:s')
 		);
-		$this->db->where('id_buku', $id);
-		if($this->db->update('buku', $data)){
+		$this->db->where('id_anggota', $id);
+		if($this->db->update('anggota', $data)){
 			return true;
 		}else{
 			return false;
@@ -63,7 +62,7 @@ class Buku_Model extends CI_Model
 	public function show($id)
 	{	
 		// baca data
-		$this->db->where('id_buku', $id);
-		return $this->db->get('buku');
+		$this->db->where('id_anggota', $id);
+		return $this->db->get('anggota');
 	}
 }

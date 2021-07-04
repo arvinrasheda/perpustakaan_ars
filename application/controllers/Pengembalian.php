@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Anggota extends CI_Controller {
+class Pengembalian extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -27,9 +27,9 @@ class Anggota extends CI_Controller {
 	public function index()
 	{
 		$data = [
-			'title' => 'Anggota',
-			'sub_title' => 'Daftar Anggota',
-			'content' => 'anggota/index',
+			'title' => 'Pengembalian',
+			'sub_title' => 'Daftar Pengembalian',
+			'content' => 'pengembalian/index',
             'show' => $this->Anggota_Model->read()->result()
 		];
 		$this->load->view('template/my_template', $data);

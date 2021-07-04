@@ -3,10 +3,10 @@
         <div class="card border-primary mb-6">
             <div class="card-header">
                 Daftar Buku
-                <a href="<?=site_url('buku/add');?>" class="btn btn-primary float-end">Tambah Data</a>
+                <a href="<?=site_url('buku/add');?>" class="btn btn-success float-end"><i class="fa fa-plus"></i> Tambah Data</a>
             </div>
             <div class="card-body text-primary">
-                <table class="table table-striped table-hover" id="tableBuku">
+                <table class="table table-striped table-hover" id="datatable">
                     <thead>
                         <tr>
                             <th>#</th>
@@ -15,8 +15,7 @@
                             <th>Penerbit</th>
                             <th>ISBN</th>
                             <th>Tahun</th>
-                            <th>Edit</th>
-                            <th>Hapus</th>
+                            <th width="8%">Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -32,10 +31,8 @@
                                 <td><?= $value->isbn; ?></td>
                                 <td><?= $value->thn_terbit; ?></td>
                                 <td>
-                                    <a href="<?=site_url('buku/edit/'.$value->id_buku);?>" class="btn btn-info btn-sm">Edit</a>
-                                </td>
-                                <td>
-                                    <a href="<?=site_url('buku/delete/'.$value->id_buku);?>" class="btn btn-danger btn-sm">Delete</a>
+                                    <a href="<?=site_url('buku/edit/'.$value->id_buku);?>" class="btn btn-warning btn-sm" title="Edit"><i class="fa fa-edit"></i></a>
+                                    <a href="<?=site_url('buku/delete/'.$value->id_buku);?>" class="btn btn-danger btn-sm" title="Hapus" onclick="return confirm('Anda yakin akan menghapus Buku dengan nama ' + '<?=$value->judul_buku;?>' + ' ini ?');"><i class="fa fa-trash"></i></a>
                                 </td>
                             </tr>
                         <?php
@@ -50,8 +47,7 @@
                             <th>Penerbit</th>
                             <th>ISBN</th>
                             <th>Tahun</th>
-                            <th>Edit</th>
-                            <th>Hapus</th>
+                            <th>Aksi</th>
                         </tr>
                     </tfoot>
                 </table>

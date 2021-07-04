@@ -2,8 +2,7 @@
     <div class="col-sm-12">
         <div class="card border-primary mb-6">
             <div class="card-header">
-                Daftar Anggota
-                <a href="<?=site_url('buku/add');?>" class="btn btn-success float-end"><i class="fa fa-plus"></i> Tambah Data</a>
+                Daftar Pengembalian
             </div>
             <div class="card-body text-primary">
                 <table class="table table-striped table-hover" id="datatable">
